@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Classification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Review Classification <br> Rate & Semantic</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="arrows">Enter your review here:</div>
+            <textarea class="input-box" rows="4" name="review_text" placeholder="Type your review..."></textarea>
+            <button class="button" type="submit">Calculate</button>
+        </form>
+
+        <div class="arrows">Result:</div>
+        <div class="result-box">
+            {% if predicted_rate and sentiment %}
+                Predict rate is {{ predicted_rate }}. Your review is {{ sentiment }}.
+            {% else %}
+                Enter a review to see the result.
+            {% endif %}
+        </div>
+
+    </div>
+</body>
+</html>

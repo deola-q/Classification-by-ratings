@@ -1,0 +1,98 @@
+body {
+    font-family: 'Kadwa', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1E0F52;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    color: #FFF;
+}
+
+.container h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #000;
+}
+
+.button {
+    background-color: #533C9F;
+    color: #FFF;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #3E2980;
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    color: #1E0F52;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.arrows {
+    font-size: 1rem;
+    color: #FFF;
+    margin-top: 10px;
+}
+
+.arrows:before {
+    content: '→';
+    margin-right: 10px;
+}
+
+.result-box:before {
+    content: '→';
+    margin-right: 10px;
+}
+
+/* Adding circles */
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(83, 60, 159, 0.5);
+    z-index: -1;
+}
+
+.container::before {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+    right: -150px;
+}
+
+.container::after {
+    width: 220px;
+    height: 220px;
+    bottom: -25px;
+    right: -150px;
+}
